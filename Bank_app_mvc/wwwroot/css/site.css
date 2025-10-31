@@ -1,0 +1,78 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.hero {
+    background: linear-gradient(135deg, #c21807, #e53935);
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+.btn-light:hover {
+    background-color: #fff;
+    color: #c21807;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+.customer-card {
+    border-radius: 16px;
+    transition: all 0.25s ease-in-out;
+}
+
+    .customer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.card-body ul li i {
+    width: 20px;
+    text-align: center;
+}
+
+h2 {
+    letter-spacing: 0.5px;
+}
+

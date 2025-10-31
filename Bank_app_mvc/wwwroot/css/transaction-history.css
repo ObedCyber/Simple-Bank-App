@@ -1,0 +1,104 @@
+﻿/* Scope everything to this container */
+.transaction-history-container {
+    max-width: 900px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+    /* Header */
+    .transaction-history-container h2 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        color: #b30000; /* red */
+    }
+
+    .transaction-history-container .subtitle {
+        color: #888;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    /* Table */
+    .transaction-history-container .transaction-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+        .transaction-history-container .transaction-table th,
+        .transaction-history-container .transaction-table td {
+            padding: 14px 10px;
+            text-align: left;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .transaction-history-container .transaction-table th {
+            background-color: #ffe5e5;
+            color: #b30000;
+            font-weight: 600;
+        }
+
+        .transaction-history-container .transaction-table tr:hover {
+            background-color: #fff4f4;
+        }
+
+    /* Amount text */
+    .transaction-history-container .amount {
+        font-weight: 600;
+        color: #b30000;
+    }
+
+    /* Transaction type badges */
+    .transaction-history-container .type-badge {
+        padding: 4px 10px;
+        border-radius: 10px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 0.85rem;
+        display: inline-block;
+    }
+
+        .transaction-history-container .type-badge.deposit {
+            background-color: #28a745; /* green */
+        }
+
+        .transaction-history-container .type-badge.withdrawal {
+            background-color: #dc3545; /* red */
+        }
+
+        .transaction-history-container .type-badge.transfer {
+            background-color: #ff9800; /* orange */
+        }
+
+    /* No transactions section */
+    .transaction-history-container .no-transactions {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+        .transaction-history-container .no-transactions p {
+            color: #777;
+            margin-bottom: 16px;
+        }
+
+    /* Button */
+    .transaction-history-container .btn {
+        background-color: #b30000;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    }
+
+        .transaction-history-container .btn:hover {
+            background-color: #990000;
+        }

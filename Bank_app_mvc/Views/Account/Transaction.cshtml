@@ -1,0 +1,101 @@
+﻿@model Bank_app_mvc.Models.Transaction
+@{
+    ViewData["Title"] = "Make a Transaction";
+}
+<link rel="stylesheet" href="~/css/transactions.css" />
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow transaction-card border-0">
+                <div class="card-header bg-danger text-white text-center py-3 rounded-top">
+                    <h4 class="mb-0"><i class="bi bi-wallet2 me-2"></i>Make a Transaction</h4>
+                </div>
+
+                <div class="card-body px-4 py-4">
+                    <form asp-action="SendMoney" asp-controller="Account" method="post">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <!-- Receiver Account Number -->
+                        <div class="mb-3">
+                            <label asp-for="ToAccountNumber" class="form-label fw-bold"></label>
+                            <input asp-for="ToAccountNumber" type="number" class="form-control" placeholder="Enter 10-digit account number" />
+                            <span asp-validation-for="ToAccountNumber" class="text-danger small"></span>
+                        </div>
+
+
+                        <!-- Receiver Bank -->
+                        <div class="mb-3">
+                            <label asp-for="Bank" class="form-label fw-bold"></label>
+                            <select asp-for="Bank" class="form-select">
+                                <option value="">-- Select Bank --</option>
+                                <option value="PeakBank">Peak Bank</option>
+                                <option>Access Bank PLC</option>
+                                <option>Citibank Nigeria Limited</option>
+                                <option>Ecobank Nigeria PLC</option>
+                                <option>Fidelity Bank PLC</option>
+                                <option>First Bank of Nigeria Limited</option>
+                                <option>First City Monument Bank PLC</option>
+                                <option>Globus Bank Limited</option>
+                                <option>Guaranty Trust Bank PLC (GTBank)</option>
+                                <option>Heritage Bank Plc</option>
+                                <option>Keystone Bank Ltd.</option>
+                                <option>Polaris Bank Plc</option>
+                                <option>Premium Trust Bank</option>
+                                <option>Providus Bank Ltd.</option>
+                                <option>Stanbic IBTC Bank Plc</option>
+                                <option>Sterling Bank Plc</option>
+                                <option>Titan Trust Bank Ltd.</option>
+                                <option>Union Bank of Nigeria Plc</option>
+                                <option>United Bank for Africa Plc</option>
+                                <option>Unity Bank Plc</option>
+                                <option>Wema Bank Plc</option>
+                                <option>Zenith Bank Plc</option>
+                            </select>
+                            <span asp-validation-for="Bank" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Account Type -->
+                        <div class="mb-3">
+                            <label asp-for="AccountType" class="form-label fw-bold"></label>
+                            <select asp-for="AccountType" class="form-select">
+                                <option value="">-- Select Account Type --</option>
+                                <option value="Savings">Savings</option>
+                                <option value="Current">Current</option>
+                            </select>
+                            <span asp-validation-for="AccountType" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="mb-3">
+                            <label asp-for="Amount" class="form-label fw-bold"></label>
+                            <input asp-for="Amount" class="form-control" placeholder="Enter amount" min="100" />
+                            <span asp-validation-for="Amount" class="text-danger small"></span>
+                        </div>
+
+                        <input asp-for="TransactionType" type="hidden" class="form-control" value="Transfer" />
+                        <input asp-for="FromAccountNumber" type="hidden" class="form-control" value="1111111111" />
+
+
+                        <!-- Submit -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-danger py-2 fw-bold">
+                                <i class="bi bi-send-fill me-2"></i>Send Money
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card-footer text-center text-muted small py-3">
+                    <i class="bi bi-shield-lock me-1"></i>
+                    Transactions are secured and encrypted.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

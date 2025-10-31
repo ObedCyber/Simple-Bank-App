@@ -1,0 +1,36 @@
+﻿.transaction-card {
+    border-radius: 15px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+    .transaction-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 0, 0, 0.15);
+    }
+
+.form-control:focus, .form-select:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-danger {
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-danger:hover {
+        background-color: #b71c1c;
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.35);
+    }
+
+.card-header {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.card-footer {
+    background-color: #fafafa;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}

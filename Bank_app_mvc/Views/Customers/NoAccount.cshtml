@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Peak Bank";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg border-0 p-5 text-center" style="max-width: 600px; border-radius: 20px;">
+        <h1 class="fw-bold text-danger mb-3">Welcome to Peak Bank</h1>
+        <p class="fs-5 text-secondary mb-4">
+            You’ve successfully logged in, but it looks like you haven’t set up your account yet.
+        </p>
+
+        <p class="text-muted mb-4">
+            Setting up your account takes less than a minute and gives you full access to your banking dashboard.
+        </p>
+
+        <a asp-controller="Customers" asp-action="Create" class="btn btn-danger btn-lg px-5 py-2 rounded-pill shadow-sm">
+            <i class="bi bi-plus-circle me-2"></i> Create My Account
+        </a>
+
+        <div class="mt-5">
+            <small class="text-muted">
+                Need help? <a href="#" class="text-decoration-none text-danger fw-semibold">Contact Support</a>
+            </small>
+        </div>
+    </div>
+</div>

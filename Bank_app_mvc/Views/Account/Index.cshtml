@@ -1,0 +1,60 @@
+﻿@model Bank_app_mvc.Models.Account
+@{
+    ViewData["Title"] = "My Account";
+}
+<link rel="stylesheet" href="~/css/account-page.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<div class="container account-page py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 account-card">
+                <div class="card-body text-center py-5">
+                    <!-- Profile Icon -->
+                    <div class="profile-icon mx-auto mb-4">
+                        <i class="bi bi-person-fill fs-1"></i>
+                    </div>
+
+                    <!-- Account Name -->
+                    <h3 class="fw-bold mb-1">@Model.AccountName</h3>
+                    <p class="text-muted mb-4">Personal Account Overview</p>
+
+                    <hr class="my-4">
+
+                    <!-- Account Details -->
+                    <div class="text-start px-4">
+                        <div class="detail-item mb-3">
+                            <i class="bi bi-credit-card-2-front me-2"></i>
+                            <strong>Account Number:</strong>
+                            <span class="ms-2">@Model.AccountNumber</span>
+                        </div>
+
+                        <div class="detail-item mb-3">
+                            <i class="bi bi-cash-coin me-2"></i>
+                            <strong>Account Balance:</strong>
+                            <span class="ms-2">₦@string.Format("{0:N2}", Model.Balance)</span>
+                        </div>
+
+                        <div class="detail-item mb-3">
+                            <i class="bi bi-person-badge me-2"></i>
+                            <strong>User ID:</strong>
+                            <span class="ms-2">@Model.CustomerId</span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Actions -->
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a asp-action="TransactionHistory" asp-route-id="@Model.CustomerId" class="btn btn-danger px-4">
+                            <i class="bi bi-clock-history"></i> Transaction History
+                        </a>
+                        <a asp-controller="Account" asp-action="Transaction" class="btn btn-outline-danger px-4">
+                            <i class="bi bi-wallet2"></i> Make a Transaction
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

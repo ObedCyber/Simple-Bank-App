@@ -1,0 +1,61 @@
+﻿@model List<Bank_app_mvc.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Transaction History";
+}
+
+<link rel="stylesheet" href="~/css/transaction-history.css" />
+
+<div class="transaction-history-container">
+    <h2>@ViewData["Title"]</h2>
+    <p class="subtitle">A record of all your past transactions</p>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Transaction Type</th>
+                    <th>Amount (₦)</th>
+                    <th>Account Number</th>
+                    <th>Account Type</th>
+                    <th>Bank</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var txn in Model.OrderByDescending(t => t.TransactionDate))
+                {
+                    <tr>
+                        <td>@txn.TransactionDate.ToString("dd MMM yyyy, hh:mm tt")</td>
+                        <td class="type">
+                            @if (txn.TransactionType == "Deposit")
+                            {
+                                <span class="type-badge deposit">Deposit</span>
+                            }
+                            else if (txn.TransactionType == "Withdrawal")
+                            {
+                                <span class="type-badge withdrawal">Withdrawal</span>
+                            }
+                            else
+                            {
+                                <span class="type-badge transfer">Transfer</span>
+                            }
+                        </td>
+                        <td class="amount">@txn.Amount.ToString("N2")</td>
+                        <td>@txn.ToAccountNumber</td>
+                        <td>@txn.AccountType</td>
+                        <td>@txn.Bank</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="no-transactions">
+            <p>No transactions yet.</p>
+            <a class="btn" asp-action="Transaction">Make your first transaction</a>
+        </div>
+    }
+</div>

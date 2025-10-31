@@ -1,0 +1,49 @@
+﻿/* Isolated account page styles — won't affect other pages */
+.account - page {
+    background - color: #fff5f5;
+    min - height: 100vh;
+}
+
+.account - card {
+    background - color: #ffffff;
+    border - radius: 1rem;
+    border - top: 4px solid #dc3545;
+    transition: all 0.3s ease;
+}
+
+.account - card:hover {
+    transform: translateY(-5px);
+box - shadow: 0 10px 20px rgba(220, 53, 69, 0.2);
+}
+
+.profile - icon {
+width: 90px;
+height: 90px;
+    background - color: #dc3545;
+    color: white;
+    border - radius: 50 %;
+display: flex;
+    align - items: center;
+    justify - content: center;
+}
+
+.detail - item i {
+    color: #dc3545;
+}
+
+.detail - item strong {
+    color: #212529;
+}
+
+.detail - item span {
+    color: #6c757d;
+}
+
+.btn - outline - danger {
+    border - width: 2px;
+}
+
+.btn - outline - danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
