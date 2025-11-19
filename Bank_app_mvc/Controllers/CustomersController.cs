@@ -103,17 +103,15 @@ namespace Bank_app_mvc.Controllers
 
             do
             {
-                // Prefix "10" to represent your bank (you can change it to any number)
-                // Then generate a random 8-digit number to make it a 10-digit account number
                 var randomDigits = random.Next(10_000_000, 99_999_999);
                 var accountNumberString = $"10{randomDigits}";
 
                 accountNumber = long.Parse(accountNumberString);
 
-                // Ensure the account number doesn't already exist
+
                 accountNumberExists =  _context.Accounts.Any(a => a.AccountNumber == accountNumber);
             }
-            while (accountNumberExists); // Repeat until you get a unique one
+            while (accountNumberExists); 
 
             return accountNumber;
         }
